@@ -18,7 +18,7 @@
         <jackson.core.version>2.7.5</jackson.core.version>
         <google.guava.version>19.0</google.guava.version>
         <fluency.version>1.8.1</fluency.version>
-        <spark.version>2.2.3</spark.version>
+        <spark.version>2.4.8</spark.version>
     </properties>
     <dependencies>
         <dependency>
