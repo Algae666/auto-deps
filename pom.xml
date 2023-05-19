@@ -1,0 +1,164 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.hulu.search</groupId>
+  <artifactId>nostoi</artifactId>
+  <version>0.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <name>Automated Dependency Checking Tests</name>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.source>1.8</java.source>
+        <java.target>1.8</java.target>
+        <maven.compiler.plugin.version>3.1</maven.compiler.plugin.version>
+        <maven.release.plugin.version>2.5.3</maven.release.plugin.version>
+        <maven.scm.provider.git.version>1.9</maven.scm.provider.git.version>
+        <kafka.avro.serializer.version>3.0.0</kafka.avro.serializer.version>
+        <avro.version>1.8.0</avro.version>
+        <jackson.core.version>2.7.5</jackson.core.version>
+        <google.guava.version>19.0</google.guava.version>
+        <fluency.version>1.8.1</fluency.version>
+        <spark.version>2.2.3</spark.version>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.16</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.3.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-dbcp2</artifactId>
+            <version>2.1</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-codec</groupId>
+            <artifactId>commons-codec</artifactId>
+            <version>1.15</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>${jackson.core.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.3.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>${google.guava.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.komamitsu</groupId>
+            <artifactId>fluency</artifactId>
+            <version>${fluency.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.kafka</groupId>
+            <artifactId>kafka-clients</artifactId>
+            <version>0.11.0.3</version>
+        </dependency>
+        <dependency>
+            <groupId>io.confluent</groupId>
+            <artifactId>kafka-avro-serializer</artifactId>
+            <version>${kafka.avro.serializer.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.avro</groupId>
+            <artifactId>avro</artifactId>
+            <version>${avro.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.16.18</version>
+        </dependency>
+        <dependency>
+            <groupId>com.twitter</groupId>
+            <artifactId>chill_2.10</artifactId>
+            <version>0.8.0</version>
+        </dependency>
+<dependency>
+    <groupId>org.apache.spark</groupId>
+    <artifactId>spark-core_2.11</artifactId>
+    <version>${spark.version}</version>
+</dependency>
+<dependency>
+    <groupId>org.apache.spark</groupId>
+    <artifactId>spark-sql_2.11</artifactId>
+    <version>${spark.version}</version>
+    <scope>provided</scope>
+</dependency>
+<dependency>
+    <groupId>org.apache.spark</groupId>
+    <artifactId>spark-hive_2.11</artifactId>
+    <version>${spark.version}</version>
+    <scope>provided</scope>
+</dependency>
+<dependency>
+    <groupId>org.apache.spark</groupId>
+    <artifactId>spark-streaming_2.11</artifactId>
+    <version>${spark.version}</version>
+    <scope>provided</scope>
+</dependency>
+    </dependencies>
+    <repositories>
+        <repository>
+            <id>central</id>
+            <!-- This should be at top, it makes maven try the central repo first and then others and hence faster dep resolution -->
+            <name>Maven Repository</name>
+            <url>https://repo1.maven.org/maven2</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>cloudera-repo</id>
+            <name>Cloudera Repository</name>
+            <url>https://repository.cloudera.com/artifactory/cloudera-repos</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <!-- For transitive dependencies brougt by parquet-thrift -->
+        <repository>
+            <id>twttr-repo</id>
+            <name>Twttr Repository</name>
+            <url>http://maven.twttr.com</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>confluent</id>
+            <url>https://packages.confluent.io/maven/</url>
+        </repository>
+    </repositories>
+  <modules>
+    <module>confluent-client</module>
+    <module>kafka-hive</module>
+  </modules>
+</project>
