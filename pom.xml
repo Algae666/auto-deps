@@ -16,7 +16,7 @@
         <kafka.avro.serializer.version>3.0.0</kafka.avro.serializer.version>
         <avro.version>1.8.0</avro.version>
         <jackson.core.version>2.7.5</jackson.core.version>
-        <google.guava.version>31.1-jre</google.guava.version>
+        <google.guava.version>32.0.0-jre</google.guava.version>
         <fluency.version>1.8.1</fluency.version>
         <spark.version>2.4.8</spark.version>
     </properties>
