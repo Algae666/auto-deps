@@ -14,7 +14,7 @@
         <maven.release.plugin.version>2.5.3</maven.release.plugin.version>
         <maven.scm.provider.git.version>1.9</maven.scm.provider.git.version>
         <kafka.avro.serializer.version>3.0.0</kafka.avro.serializer.version>
-        <avro.version>1.8.0</avro.version>
+        <avro.version>1.11.4</avro.version>
         <jackson.core.version>2.7.5</jackson.core.version>
         <google.guava.version>32.0.0-jre</google.guava.version>
         <fluency.version>1.8.1</fluency.version>
